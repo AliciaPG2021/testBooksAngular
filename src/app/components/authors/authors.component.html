@@ -1,1 +1,13 @@
-<p>authors works!</p>
+<div class="autores">
+    <div class="autor" *ngFor="let author of arrAuthors">
+
+        <p>{{author.first_name}}</p>
+        <p>{{author.last_name}}</p>
+
+    </div>
+
+</div>
+
+<div>
+    <button [routerLink]="['/newAuthor']">Introduce un nuevo autor</button>
+</div>
