@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { books } from 'interfaces/books.interface';
 import { BooksService } from 'src/app/services/books.service';
 
@@ -8,6 +8,8 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
+
+  @Input() book: books;
 
   arrBooks: books[];
 

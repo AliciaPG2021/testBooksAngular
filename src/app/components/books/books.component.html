@@ -15,7 +15,8 @@
                 <h5 class="card-title">{{book.name}}</h5>
                 <p class="card-text">{{book.ISBN}}</p>
                 <p class="card-text">{{book.fk_author}}</p>
-                <button type="button" class="btn btn-outline-secondary">Detalle</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/detail/', book.id]">Detalle</button>
             </div>
         </div>
 
