@@ -15,7 +15,8 @@
                 <p class="card-text">{{author.first_name}}</p>
                 <p class="card-text">{{author.last_name}}</p>
 
-                <button type="button" class="btn btn-outline-secondary">Detalle</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/authors/', author.id]">Detalle</button>
             </div>
         </div>
 

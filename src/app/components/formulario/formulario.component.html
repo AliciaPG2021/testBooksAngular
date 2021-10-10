@@ -3,19 +3,22 @@
     <div class="mb-3">
         <label class="form-label">Nombre</label>
         <input type="text" class="form-control" formControlName="name">
+        <p class="error" *ngIf="checkControl('name', 'required')">
+            El campo nombre es obligatorio.
+        </p>
     </div>
     <div class="mb-3">
         <label class="form-label">ISBN</label>
         <input type="text" class="form-control" formControlName="ISBN">
     </div>
 
-    <label for="" class="form-label">Autores</label>
+    <!-- <label for="" class="form-label">Autores</label>
     <select name="" id="" class="form-control" formControlName="fk_author">
         <option value="todos">Selecciona un autor</option>
         <option [value]="author.id" *ngFor="let author of authors">{{author.first_name}} {{author.last_name}}
         </option>
 
-    </select>
+    </select> -->
 
     <button type="button" class="btn btn-outline-secondary m-2">Enviar</button>
     <button type="button" class="btn btn-outline-secondary" [routerLink]="['/']">Volver</button>

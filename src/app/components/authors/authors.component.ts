@@ -9,7 +9,7 @@ import { AuthorsService } from 'src/app/services/authors.service';
 })
 export class AuthorsComponent implements OnInit {
 
-
+  @Input() author: authors;
 
   arrAuthors: authors[];
 

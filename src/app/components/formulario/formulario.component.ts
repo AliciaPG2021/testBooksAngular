@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { authors } from 'interfaces/authors.interface';
 import { AuthorsService } from 'src/app/services/authors.service';
@@ -18,7 +18,7 @@ export class FormularioComponent implements OnInit {
 
   constructor(private booksService: BooksService, private router: Router, private authorsService: AuthorsService) {
     this.formulario = new FormGroup({
-      name: new FormControl(),
+      name: new FormControl('', [Validators.required]),
       ISBN: new FormControl(),
 
     })
@@ -38,6 +38,10 @@ export class FormularioComponent implements OnInit {
 
   }
 
+  checkControl(controlName, validatorName) {
+    return this.formulario.get(controlName).hasError(validatorName) && this.formulario.get(controlName).touched;
+
+  }
   async onSubmit() {
     const response = await this.booksService.createBook(this.formulario.value);
     console.log(response);

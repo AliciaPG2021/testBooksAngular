@@ -3,10 +3,16 @@
     <div class="mb-3 ">
         <label class="form-label">Nombre</label>
         <input type="text" class="form-control" formControlName="first_name">
+        <!-- <p class="error" *ngIf="checkControl('first_name', 'required')">
+            El campo nombre es obligatorio.
+        </p> -->
     </div>
     <div class="mb-3">
         <label class="form-label">Apellidos</label>
         <input type="text" class="form-control" formControlName="last_name">
+        <!-- <p class="error" *ngIf="checkControl('last_name', 'required')">
+            El campo apellido es obligatorio.
+        </p> -->
     </div>
 
     <button type="button" class="btn btn-outline-secondary m-2">Enviar</button>
