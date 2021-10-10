@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { authors } from 'interfaces/authors.interface';
 import { AuthorsService } from 'src/app/services/authors.service';
 
@@ -8,6 +8,8 @@ import { AuthorsService } from 'src/app/services/authors.service';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent implements OnInit {
+
+
 
   arrAuthors: authors[];
 

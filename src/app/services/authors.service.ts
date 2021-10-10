@@ -30,6 +30,9 @@ export class AuthorsService {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
 
   }
-
+  //Buscar autor por Id ---> GET http://localhost:3000/api/authors/id
+  getById(pId: number) {
+    return this.httpClient.get<authors>(`${this.baseUrl}/${pId}`).toPromise();
+  }
 
 }
