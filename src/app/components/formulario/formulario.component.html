@@ -1,1 +1,24 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ISBN</label>
+        <input type="text" class="form-control" formControlName="ISBN">
+    </div>
+
+    <label for="" class="form-label">Autores</label>
+    <select name="" id="" class="form-control" formControlName="fk_author">
+        <option value="todos">Selecciona un autor</option>
+        <option [value]="author.id" *ngFor="let author of authors">{{author.first_name}} {{author.last_name}}
+        </option>
+
+    </select>
+
+    <button type="button" class="btn btn-outline-secondary m-2">Enviar</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['/']">Volver</button>
+
+
+</form>
