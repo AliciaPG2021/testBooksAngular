@@ -1,14 +1,24 @@
-<div class="autores">
-    <div class="autor" *ngFor="let author of arrAuthors">
-
-        <p>{{author.first_name}}</p>
-        <p>{{author.last_name}}</p>
-        <button [routerLink]="['/authors/:authorId']">Detalle</button>
-
-    </div>
+<div class="m-3">
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['/newAuthor']">Introduce un nuevo
+        autor</button>
 
 </div>
 
-<div>
-    <button [routerLink]="['/newAuthor']">Introduce un nuevo autor</button>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col" class="card border-dark m-2 " style="max-width: 20rem; " *ngFor="let author of arrAuthors">
+            <div class="card-header">Autor</div>
+            <div class="card-body text-dark">
+
+                <p class="card-text">{{author.first_name}}</p>
+                <p class="card-text">{{author.last_name}}</p>
+
+                <button type="button" class="btn btn-outline-secondary">Detalle</button>
+            </div>
+        </div>
+
+    </div>
+
 </div>

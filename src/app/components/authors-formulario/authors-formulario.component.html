@@ -1,6 +1,6 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-    <div class="mb-3">
+    <div class="mb-3 ">
         <label class="form-label">Nombre</label>
         <input type="text" class="form-control" formControlName="first_name">
     </div>
@@ -9,8 +9,8 @@
         <input type="text" class="form-control" formControlName="last_name">
     </div>
 
+    <button type="button" class="btn btn-outline-secondary m-2">Enviar</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['/authors']">Volver</button>
 
-    <button class="btn btn-sucess">Enviar</button>
-    <button [routerLink]="['/authors']">volver</button>
 
 </form>
