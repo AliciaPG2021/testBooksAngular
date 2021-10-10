@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { authors } from 'interfaces/authors.interface';
+import { AuthorsService } from 'src/app/services/authors.service';
 
 @Component({
   selector: 'app-authors',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorsComponent implements OnInit {
 
-  constructor() { }
+
+
+  arrAuthors: authors[];
+
+  constructor(private authorsService: AuthorsService) { }
+
 
   ngOnInit(): void {
+    this.authorsService.getAllAuthors()
+      .then(response => {
+        console.log(response);
+        this.arrAuthors = response;
+
+      })
+      .catch(error => console.log(error))
   }
 
 }

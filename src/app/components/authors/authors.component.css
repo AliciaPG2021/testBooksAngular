@@ -1,0 +1,16 @@
+.autores{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ 
+}
+
+.autor{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin:10px;
+    padding:20px;
+    background-color: rgb(223, 227, 231);
+    
+}
+
