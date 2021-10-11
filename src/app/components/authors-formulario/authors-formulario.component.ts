@@ -35,7 +35,7 @@ export class AuthorsFormularioComponent implements OnInit {
 
     if (response['affectedRows'] === 1) {
 
-      alert('Profesor insertado');
+      alert('autor insertado');
       this.formulario.reset();
       this.router.navigate(['/authors']);
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { authors } from 'interfaces/authors.interface';
 import { AuthorsService } from 'src/app/services/authors.service';
@@ -10,6 +10,8 @@ import { AuthorsService } from 'src/app/services/authors.service';
 })
 export class AuthorDetailComponent implements OnInit {
 
+  @Input() author: authors;
+
   authorId: authors;
 
   constructor(private authorsService: AuthorsService, private activatedRoute: ActivatedRoute) { }
@@ -17,7 +19,7 @@ export class AuthorDetailComponent implements OnInit {
   ngOnInit(): any {
     this.activatedRoute.params.subscribe(async (params) => {
       this.authorId = await this.authorsService.getById(parseInt(params.authorId))
-      //console.log(this.productoId);
+
 
     });
   };

@@ -5,10 +5,14 @@
             <div class="card-header">Autor</div>
             <div class="card-body text-dark">
 
-                <p class="card-text">{{authorId.first_name}}</p>
-                <p class="card-text">{{authorId.last_name}}</p>
+                <p class="card-text">{{authorId?.first_name}}</p>
+                <p class="card-text">{{authorId?.last_name}}</p>
 
-                <button type="button" class="btn btn-outline-secondary">Detalle</button>
+                <button type="button" class="btn btn-outline-secondary mb-2" [routerLink]="['/authors/']">Volver a
+                    autores</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/updateAuthor/', authorId?.id]">Modificar autor</button>
+
             </div>
         </div>
 

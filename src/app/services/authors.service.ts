@@ -31,9 +31,16 @@ export class AuthorsService {
 
   }
 
-  //Buscar autor por Id ---> GET http://localhost:3000/api/authors/id
+  //Buscar autor por Id ---> GET http://localhost:3000/api/authors/5
   getById(pId: number) {
     return this.httpClient.get<authors>(`${this.baseUrl}/${pId}`).toPromise();
+  }
+
+  //Método modificar producto --> PUT http://localhost:3000/api/authors/5
+
+
+  updateAuthor(pId, pAuthor) {
+    return this.httpClient.put(`${this.baseUrl}/${pId}`, pAuthor).toPromise();
   }
 
 }
