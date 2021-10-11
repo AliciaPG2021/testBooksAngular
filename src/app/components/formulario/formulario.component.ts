@@ -18,9 +18,9 @@ export class FormularioComponent implements OnInit {
 
   constructor(private booksService: BooksService, private router: Router, private authorsService: AuthorsService) {
     this.formulario = new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      name: new FormControl(),
       ISBN: new FormControl(),
-
+      fk_author: new FormControl(),
     })
 
     this.authors = [];
@@ -42,6 +42,7 @@ export class FormularioComponent implements OnInit {
     return this.formulario.get(controlName).hasError(validatorName) && this.formulario.get(controlName).touched;
 
   }
+
   async onSubmit() {
     const response = await this.booksService.createBook(this.formulario.value);
     console.log(response);
@@ -58,10 +59,3 @@ export class FormularioComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-

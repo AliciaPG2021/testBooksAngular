@@ -11,6 +11,8 @@ import { AuthorsComponent } from './components/authors/authors.component';
 import { AuthorsFormularioComponent } from './components/authors-formulario/authors-formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorDetailComponent } from './components/author-detail/author-detail.component';
+import { AuthorModificarComponent } from './components/author-modificar/author-modificar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AuthorDetailComponent } from './components/author-detail/author-detail.
     FormularioComponent,
     AuthorsComponent,
     AuthorsFormularioComponent,
-    AuthorDetailComponent
+    AuthorDetailComponent,
+    AuthorModificarComponent,
+
   ],
   imports: [
     BrowserModule,
