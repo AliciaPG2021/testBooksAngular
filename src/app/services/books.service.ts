@@ -37,4 +37,11 @@ export class BooksService {
     return this.httpClient.get<books>(`${this.baseUrl}/${pId}`).toPromise();
   }
 
+  //Método modificar libro --> PUT http://localhost:3000/api/books/5
+
+
+  updateBook(pId, pBook) {
+    return this.httpClient.put(`${this.baseUrl}/${pId}`, pBook).toPromise();
+  }
+
 }

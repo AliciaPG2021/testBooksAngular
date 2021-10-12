@@ -12,6 +12,7 @@ import { AuthorsFormularioComponent } from './components/authors-formulario/auth
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorDetailComponent } from './components/author-detail/author-detail.component';
 import { AuthorModificarComponent } from './components/author-modificar/author-modificar.component';
+import { BooksModificarComponent } from './components/books-modificar/books-modificar.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AuthorModificarComponent } from './components/author-modificar/author-m
     AuthorsFormularioComponent,
     AuthorDetailComponent,
     AuthorModificarComponent,
+    BooksModificarComponent,
 
   ],
   imports: [

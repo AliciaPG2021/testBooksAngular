@@ -9,6 +9,9 @@
                 <p class="card-text">{{bookId?.first_name}} {{bookId?.last_name}}</p>
 
                 <button type="button" class="btn btn-outline-secondary" [routerLink]="['/']">Volver a libros</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/updateBook/', bookId?.id]">Modificar
+                    libro</button>
 
             </div>
         </div>

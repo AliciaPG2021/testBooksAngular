@@ -39,7 +39,7 @@ export class AuthorModificarComponent implements OnInit {
 
     if (resultado) {
       alert('autor modificado');
-      this.router.navigate(['/author']);
+      this.router.navigate(['/authors']);
     } else (resultado['autor no modificado']);
 
   }

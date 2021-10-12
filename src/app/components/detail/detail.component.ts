@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { books } from 'interfaces/books.interface';
 import { BooksService } from 'src/app/services/books.service';
@@ -9,6 +9,8 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+
+  @Input() books: books;
 
   bookId: books;
 

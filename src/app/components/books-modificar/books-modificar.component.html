@@ -1,0 +1,38 @@
+<div class="card m-3 text-center border border-3 text-secondary fs-4">
+    <div class="card-body">
+        Modifica el libro
+    </div>
+</div>
+
+<div class="m-5">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" *ngIf="books">
+
+        <div class="mb-3 ">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" formControlName="name">
+            <!-- <p class="error" *ngIf="checkControl('first_name', 'required')">
+            El campo nombre es obligatorio.
+        </p> -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ISBN</label>
+            <input type="text" class="form-control" formControlName="ISBN">
+            <!-- <p class="error" *ngIf="checkControl('last_name', 'required')">
+            El campo apellido es obligatorio.
+        </p> -->
+        </div>
+
+        <label for="" class="form-label">Autores</label>
+        <select class="form-control" formControlName="fk_author">
+            <option value="todos">Selecciona un autor</option>
+            <option [value]="author.id" *ngFor="let author of authors">{{author.first_name}} {{author.last_name}}
+            </option>
+
+        </select>
+
+        <button class="btn btn-outline-secondary m-2">Modificar</button>
+        <button type="button" class="btn btn-outline-secondary" [routerLink]="['/']">Volver</button>
+
+
+    </form>
+</div>
