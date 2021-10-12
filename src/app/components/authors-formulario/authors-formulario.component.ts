@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AuthorsService } from 'src/app/services/authors.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { AuthorsService } from 'src/app/services/authors.service';
 })
 export class AuthorsFormularioComponent implements OnInit {
 
-  formulario: FormGroup
+  formulario: FormGroup;
+
 
   constructor(private authorsService: AuthorsService, private router: Router) {
     this.formulario = new FormGroup({
@@ -22,13 +24,18 @@ export class AuthorsFormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // checkControl(controlName, validatorName) {
+  //   return this.formulario.get(controlName).hasError(validatorName) && this.formulario.get(controlName).touched;
+
+  // }
   async onSubmit() {
     const response = await this.authorsService.create(this.formulario.value);
     console.log(response);
 
     if (response['affectedRows'] === 1) {
 
-      alert('Profesor insertado');
+      alert('autor insertado');
       this.formulario.reset();
       this.router.navigate(['/authors']);
 

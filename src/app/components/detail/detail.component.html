@@ -1,1 +1,21 @@
-<p>detail works!</p>
+<div class="container">
+    <div class="row">
+
+        <div class="col" class="card border-dark m-2 " style="max-width: 20rem; ">
+            <div class="card-header">Libro</div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">{{bookId?.name}}</h5>
+                <p class="card-text">{{bookId?.ISBN}}</p>
+                <p class="card-text">{{bookId?.first_name}} {{bookId?.last_name}}</p>
+
+                <button type="button" class="btn btn-outline-secondary" [routerLink]="['/']">Volver a libros</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/updateBook/', bookId?.id]">Modificar
+                    libro</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

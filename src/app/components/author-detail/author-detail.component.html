@@ -1,1 +1,21 @@
-<p>author-detail works!</p>
+<div class="container">
+    <div class="row">
+
+        <div class="col" class="card border-dark m-2 " style="max-width: 20rem; ">
+            <div class="card-header">Autor</div>
+            <div class="card-body text-dark">
+
+                <p class="card-text">{{authorId?.first_name}}</p>
+                <p class="card-text">{{authorId?.last_name}}</p>
+
+                <button type="button" class="btn btn-outline-secondary mb-2" [routerLink]="['/authors/']">Volver a
+                    autores</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/updateAuthor/', authorId?.id]">Modificar autor</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

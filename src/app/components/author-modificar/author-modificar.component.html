@@ -1,11 +1,11 @@
 <div class="card m-3 text-center border border-3 text-secondary fs-4">
     <div class="card-body">
-        Introduce un nuevo autor
+        Modifica el autor
     </div>
 </div>
 
 <div class="m-5">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" *ngIf="author">
 
         <div class="mb-3 ">
             <label class="form-label">Nombre</label>
@@ -22,7 +22,7 @@
         </p> -->
         </div>
 
-        <button class="btn btn-outline-secondary m-2">Enviar</button>
+        <button class="btn btn-outline-secondary m-2">Modificar</button>
         <button type="button" class="btn btn-outline-secondary" [routerLink]="['/authors']">Volver</button>
 
 

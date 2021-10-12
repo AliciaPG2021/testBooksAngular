@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { authors } from 'interfaces/authors.interface';
+import { AuthorsService } from 'src/app/services/authors.service';
 
 @Component({
   selector: 'app-author-detail',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() author: authors;
 
-  ngOnInit(): void {
-  }
+  authorId: authors;
+
+  constructor(private authorsService: AuthorsService, private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): any {
+    this.activatedRoute.params.subscribe(async (params) => {
+      this.authorId = await this.authorsService.getById(parseInt(params.authorId))
+
+
+    });
+  };
 
 }
