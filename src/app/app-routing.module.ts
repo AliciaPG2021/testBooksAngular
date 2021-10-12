@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthorDetailComponent } from './components/author-detail/author-detail.component';
+import { AuthorModificarComponent } from './components/author-modificar/author-modificar.component';
 import { AuthorsFormularioComponent } from './components/authors-formulario/authors-formulario.component';
 import { AuthorsComponent } from './components/authors/authors.component';
+import { BooksModificarComponent } from './components/books-modificar/books-modificar.component';
 import { BooksComponent } from './components/books/books.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: BooksComponent },
-  { path: 'detail', component: DetailComponent },
+  { path: 'detail/:bookId', component: DetailComponent },
+  { path: 'updateBook/:bookId', component: BooksModificarComponent },
   { path: 'newBook', component: FormularioComponent },
   { path: 'authors', component: AuthorsComponent },
+  { path: 'authors/:authorId', component: AuthorDetailComponent },
   { path: 'newAuthor', component: AuthorsFormularioComponent },
+  { path: 'updateAuthor/:authorId', component: AuthorModificarComponent },
   { path: '**', redirectTo: '/' }
 ];
 

@@ -1,1 +1,32 @@
-<p>books works!</p>
+<div class="card m-3 text-center border border-3 text-secondary fs-3 ">
+    <div class="card-body">
+        LIBROS
+    </div>
+</div>
+
+
+<div class="m-3">
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['/newBook']">Introduce un nuevo
+        libro</button>
+
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col" class="card border-dark m-2 " style="max-width: 20rem; " *ngFor="let book of arrBooks">
+            <div class="card-header fs-4">{{book.name}}</div>
+            <div class="card-body">
+                <h5 class="card-text">Autor: {{book.first_name}} {{book.last_name}}</h5>
+                <p class="card-text">ISBN: {{book.ISBN}}</p>
+
+                <button type="button" class="btn btn-outline-secondary"
+                    [routerLink]="['/detail/', book.id]">Detalle</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
